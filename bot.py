@@ -7,7 +7,7 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Mess
 
 BOT_TOKEN = "8813676463:AAHXrJ_p6ENXucNHeYgUxkS87TQlOF3Q4zo"
 GITHUB_USERNAME = "dolflexff-sudo"
-GITHUB_TOKEN = "GITHUB_TOKEN = "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""
+GITHUB_TOKEN = "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""
 GITHUB_REPO = "my-files"
 
 async def start(update, context):
