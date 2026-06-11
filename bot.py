@@ -5,10 +5,20 @@ import requests
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, MessageHandler, filters, ContextTypes
 
-BOT_TOKEN = "8813676463:AAHXrJ_p6ENXucNHeYgUxkS87TQlOF3Q4zo"
+# ========== RAILWAY VARIABLES SE TOKEN LE (Safe) ==========
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 GITHUB_USERNAME = "dolflexff-sudo"
-GITHUB_TOKEN = "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"
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")  # Railway Variable se lega
 GITHUB_REPO = "my-files"
+
+# ========== CHECK TOKEN ==========
+if not BOT_TOKEN:
+    print("❌ ERROR: BOT_TOKEN not found! Add it in Railway Variables.")
+    exit(1)
+
+if not GITHUB_TOKEN:
+    print("❌ ERROR: GITHUB_TOKEN not found! Add it in Railway Variables.")
+    exit(1)
 
 async def start(update, context):
     keyboard = [[InlineKeyboardButton("📤 SEND FILE", callback_data="how")]]
